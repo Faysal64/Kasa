@@ -1,10 +1,62 @@
 body{
   margin:0px;
-  padding:0px
+  padding:0px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.navbar{
+
+.header{
+  margin: auto;
+  width: 74%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  font-weight: 500;
+  padding: 30px 0px 30px 0px;
 }
 
+.nav-links {
+  display: flex; /* Utilisation de flexbox pour aligner Accueil et A propos */
+  gap: 3rem; /* Espacement horizontal entre les liens */
+}
+
+.nav-links div {
+  cursor: pointer; /* Ajout d'un curseur pour l'interactivité */
+}
+
+.banner {
+  width: 70%;
+  margin: auto;
+  border-radius: 2rem;
+  height: 223px; /* Hauteur de la bannière */
+  background-image: url('/IMG.png');  /* Utilisez le chemin correct pour l'image */
+  background-size: cover;  /* L'image couvre toute la div */
+  background-position: center;  /* Centrez l'image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 2rem;
+  position: relative;  /* Nécessaire pour positionner l'overlay par-dessus l'image */
+  box-shadow: 0 10px 6px -4px rgba(0, 0, 0, 0.2), 0 5px 2px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.overlay {
+  position: absolute;  /* Positionne l'overlay par-dessus l'image */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);  /* Couleur sombre avec opacité */
+  z-index: 1;  /* Assurez-vous que l'overlay est au-dessus de l'image */
+  border-radius: 2rem;
+}
+
+.banner h1 {
+  color: white;  /* Couleur du texte */
+  font-size: 2rem;
+  z-index: 2;  /* Le texte doit être au-dessus de l'overlay */
+  position: relative;  /* Assurez-vous que le texte est au-dessus de l'overlay */
+}
