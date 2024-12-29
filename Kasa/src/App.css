@@ -39,7 +39,7 @@ body{
   padding-inline: 2rem;
   position: relative;  /* Nécessaire pour positionner l'overlay par-dessus l'image */
   box-shadow: 0 10px 6px -4px rgba(0, 0, 0, 0.2), 0 5px 2px rgba(0, 0, 0, 0.1);
-
+  margin-bottom: 30px;
 
 }
 
@@ -59,4 +59,45 @@ body{
   font-size: 2rem;
   z-index: 2;  /* Le texte doit être au-dessus de l'overlay */
   position: relative;  /* Assurez-vous que le texte est au-dessus de l'overlay */
+}
+
+
+/*Appartement*/
+
+/* Appartement */
+
+.grid {
+  background-color: #F6F6F6;
+  padding: 30px 30px 30px 30px;
+  width: 70%; /* Définit une largeur fixe de 70% */
+  margin: 0 auto; /* Centre horizontalement la grille */
+  display: flex;
+  justify-content: center; /* Centre la grille horizontalement */
+  border-radius: 2rem;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de tailles égales */
+  grid-gap: 20px; /* Espace de 20px entre les éléments */
+  width: 100%; /* La grille occupe toute la largeur de son conteneur */
+}
+
+.redGrid {
+  background-color: #FF6060;
+  height: 340px; /* Hauteur fixe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px; /* Optionnel : arrondi des bords */
+}
+
+/*footer*/
+
+.backgroundBlack{
+  background-color: black;
+  padding: 60px 0px 60px 0px;
 }
