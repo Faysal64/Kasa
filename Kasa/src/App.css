@@ -17,87 +17,155 @@ body{
 }
 
 .nav-links {
-  display: flex; /* Utilisation de flexbox pour aligner Accueil et A propos */
-  gap: 3rem; /* Espacement horizontal entre les liens */
+  display: flex; 
+  gap: 3rem; 
 }
 
 .nav-links div {
-  cursor: pointer; /* Ajout d'un curseur pour l'interactivité */
+  cursor: pointer;
 }
 
 .banner {
   width: 70%;
   margin: auto;
   border-radius: 2rem;
-  height: 223px; /* Hauteur de la bannière */
-  background-image: url('/IMG.png');  /* Utilisez le chemin correct pour l'image */
-  background-size: cover;  /* L'image couvre toute la div */
-  background-position: center;  /* Centrez l'image */
+  height: 223px;
+  background-image: url('/IMG.png');
+  background-size: cover; 
+  background-position: center;  
   display: flex;
   align-items: center;
   justify-content: center;
   padding-inline: 2rem;
-  position: relative;  /* Nécessaire pour positionner l'overlay par-dessus l'image */
+  position: relative;  
   box-shadow: 0 10px 6px -4px rgba(0, 0, 0, 0.2), 0 5px 2px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 
 }
 
 .overlay {
-  position: absolute;  /* Positionne l'overlay par-dessus l'image */
+  position: absolute;  
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);  /* Couleur sombre avec opacité */
-  z-index: 1;  /* Assurez-vous que l'overlay est au-dessus de l'image */
+  background-color: rgba(0, 0, 0, 0.5);  
+  z-index: 1;  
   border-radius: 2rem;
 }
 
 .banner h1 {
-  color: white;  /* Couleur du texte */
+  color: white;  
   font-size: 2rem;
-  z-index: 2;  /* Le texte doit être au-dessus de l'overlay */
-  position: relative;  /* Assurez-vous que le texte est au-dessus de l'overlay */
+  z-index: 2; 
+  position: relative;
 }
 
-
-/*Appartement*/
 
 /* Appartement */
 
 .grid {
   background-color: #F6F6F6;
-  padding: 30px 30px 30px 30px;
-  width: 70%; /* Définit une largeur fixe de 70% */
-  margin: 0 auto; /* Centre horizontalement la grille */
+  padding: 30px 30px;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center; /* Centre la grille horizontalement */
+  justify-content: center;
   border-radius: 2rem;
 }
 
 .grid2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de tailles égales */
-  grid-gap: 20px; /* Espace de 20px entre les éléments */
-  width: 100%; /* La grille occupe toute la largeur de son conteneur */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 100%;
 }
 
 .redGrid {
-  background-color: #FF6060;
-  height: 340px; /* Hauteur fixe */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 8px; /* Optionnel : arrondi des bords */
+  position: relative; /* Permet de positionner le texte par-dessus l'image */
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-/*footer*/
+.redGrid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image remplit son conteneur sans déformation */
+  border-radius: 8px; /* Ajoute des bords arrondis */
+}
 
-.backgroundBlack{
+.redGrid .textContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.redGrid .textContainer span {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .redGrid {
+    height: 250px; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid2 {
+    grid-template-columns: 1fr; 
+  }
+
+  .redGrid {
+    height: 200px; 
+  }
+
+  .grid {
+    width: 70%; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .redGrid {
+    height: 180px; 
+  }
+
+  .grid {
+    padding: 20px; 
+  }
+}
+
+/* footer */
+.backgroundBlack {
   background-color: black;
-  padding: 60px 0px 60px 0px;
+  padding: 60px 0px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.white {
+  color: white;
+  margin-top: 20px; 
+  text-align: center; 
 }
