@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import de Link
+import {NavLink} from 'react-router-dom'; 
+import "../App.css";
 
 function Header() {
   return (
     <nav className='header'>
+      <NavLink to="/">
       <div>
         <img src='Logo.png' alt='logo' />
       </div>
+      </NavLink>
       <div className='nav-links'>
-        <Link to="/">Accueil</Link>
-        <Link to="/about">A propos</Link> 
+        <NavLink to="/">Accueil</NavLink>
+        <NavLink to="/about">A propos</NavLink> 
       </div>
     </nav>
   );

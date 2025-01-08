@@ -1,0 +1,157 @@
+.colorRed {
+    color: #FF6060;
+}
+
+.backRed {
+    background-color: #FF6060;
+    padding: 3px 0;
+    border-radius: 10px;
+    width: 115px;
+    color: white;
+    text-align: center;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: -10px;
+}
+
+
+.flexRow2 {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.main-container {
+    margin: auto;
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centrer le texte */
+}
+
+
+.description-container {
+    margin-top: 30px;
+    width: 100%;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+
+.location {
+    text-align: left;
+    margin-top: -20px;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 1200px; /* Limite la taille maximale de l'image */
+    margin: auto; /* Centre le conteneur horizontalement */
+    overflow: hidden; /* Cache tout débordement éventuel */
+}
+
+.background-image {
+    width: 100%; /* L'image prendra toute la largeur du conteneur */
+    height: auto; /* La hauteur sera ajustée automatiquement pour conserver le ratio */
+    max-width: 100%; /* Empêche l'image de dépasser la taille de son conteneur */
+    display: block; /* Évite les espaces blancs indésirables autour de l'image */
+}
+
+.author-name {
+    text-align: center; /* Centre les textes Alexandre et Dumas */
+    margin-bottom: 10px; /* Ajoute un espace entre les noms et la boule */
+    font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
+    line-height: 1.2; /* Réduit l'espace entre Alexandre et Dumas */
+    margin-left: 10px;
+    color: #FF6060;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.iconeBoule {
+    background-color: #C4C4C4;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 10px auto; /* Centre la boule sous le texte */
+}
+
+
+.starsWidht{
+    font-size: 20px;
+    height: 36px;
+    
+}
+
+.sizeStars {
+    color: #FF6060;
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.displayRow2{
+    display: flex;
+    justify-content: end;
+}
+
+.margeDumas{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.backRed2 {
+    background-color: #FF6060;
+    padding: 10px 10px;
+    width: 100%; /* Ajustement pour afficher côte à côte */
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.description-container {
+    display: flex;
+    justify-content: space-between; /* Les descriptions sont côte à côte */
+    gap: 20px; /* Espacement entre les deux descriptions */
+    margin-top: 20px;
+}
+
+.icon {
+    font-weight: bold;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+}
+
+.description-item {
+    width: 45%; /* Assure que les deux éléments ont une largeur égale */
+    transition: all 0.3s ease; /* Animation pour fluidifier le changement de taille */
+}
+
+.description-item p {
+    margin-top: 10px;
+}
+
+.description-container p:last-child {
+    margin-top: 10px;
+}

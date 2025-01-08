@@ -25,6 +25,16 @@ body{
   cursor: pointer;
 }
 
+.nav-links a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links a:hover{
+  text-decoration: underline;
+  
+}
+
 .banner {
   width: 70%;
   margin: auto;
