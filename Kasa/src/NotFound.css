@@ -1,0 +1,29 @@
+.flexCentre {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    margin: 50px 0px 100px 0px;
+    text-align: center;
+    gap: 100px; /* Ajoute de l'espace entre les éléments */
+  }
+  
+  .erreur {
+    font-size: 200px;
+    font-weight: bold;
+    color: #FF6060;
+  }
+  
+  .color {
+    color: #FF6060;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .flexCentre div:last-child {
+    font-size: 16px;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer; /* Pour rendre le texte cliquable si nécessaire */
+  }
+  
