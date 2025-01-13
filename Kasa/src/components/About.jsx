@@ -18,7 +18,7 @@ const About = () => {
   ];
 
   return (
-    <div className="app-container"> {/* Conteneur principal avec Flexbox */}
+    <div className="about-page"> {/* Ajouter la classe "about-page" */}
       <Header />
       <div className="sizeImage-container">
         <img src="/Mountain.png" alt="Mountain" className="sizeImage" />

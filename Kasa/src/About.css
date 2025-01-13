@@ -1,15 +1,15 @@
-/* Rendre le body et le conteneur flexibles */
-body, .app-container {
+/* Styles spécifiques à la page About */
+.about-page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Cela assure que la page prend au moins la hauteur de l'écran */
+    min-height: 100vh; /* Assure que la page prend au moins la hauteur de l'écran */
   }
   
   .sizeImage-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Tu peux ajuster ce margin selon tes besoins */
+    margin-top: 20px; /* Ajuste selon les besoins */
   }
   
   .sizeImage {
@@ -20,13 +20,12 @@ body, .app-container {
   }
   
   .description-container1 {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 35px;
-    flex-grow: 1;
-}
+    margin-top: 20px;
+    flex-grow: 1; /* Permet à la section des descriptions de prendre tout l'espace restant */
+  }
   
   .description-item1 {
     width: 50%;
