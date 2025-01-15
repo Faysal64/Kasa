@@ -9,7 +9,7 @@ function Appartement() {
       <div className="grid2">
         {Maison.map((item) => (
           <div key={item.id} className="redGrid">
-            <Link to="/Appartement" className="linkWrapper">
+            <Link to={`/Appartement/${item.id}`} className="linkWrapper">
               <img src={item.cover} alt={item.title} className="cardImage" />
               <div className="textContainer">
                 <span className="title">{item.title}</span>

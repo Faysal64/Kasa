@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import du composant Link
+import { Link } from 'react-router-dom'; 
 import Header from './Header';
 import Footer from './Footer';
 import '../NotFound.css';

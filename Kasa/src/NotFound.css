@@ -1,11 +1,11 @@
 .flexCentre {
     display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    align-items: center; /* Centre horizontalement */
-    justify-content: center; /* Centre verticalement */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
     margin: 50px 0px 100px 0px;
     text-align: center;
-    gap: 100px; /* Ajoute de l'espace entre les éléments */
+    gap: 100px; 
   }
   
   .erreur {
@@ -24,6 +24,6 @@
     font-size: 16px;
     color: #000;
     text-decoration: underline;
-    cursor: pointer; /* Pour rendre le texte cliquable si nécessaire */
+    cursor: pointer; 
   }
   

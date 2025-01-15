@@ -11,14 +11,14 @@ const About = () => {
   };
 
   const descriptions = [
-    { title: 'Fiabilité', text: 'Nous assurons la fiabilité de nos services en respectant nos engagements.' },
-    { title: 'Respect', text: 'Le respect de la vie privée de nos utilisateurs est une priorité.' },
-    { title: 'Service', text: 'Nous offrons un service client disponible et à l’écoute.' },
-    { title: 'Sécurité', text: 'La sécurité de vos données est notre principale préoccupation.' },
+    { title: 'Fiabilité', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { title: 'Respect', text: 'Suspendisse vitae orci in metus pulvinar feugiat ut sed nisl.' },
+    { title: 'Service', text: 'Nulla facilisi. Nam facilisis sapien sit amet ipsum placerat egestas.' },
+    { title: 'Sécurité', text: 'Praesent vitae magna vel purus dictum ultricies.' },
   ];
 
   return (
-    <div className="about-page"> {/* Ajouter la classe "about-page" */}
+    <div className="about-page"> 
       <Header />
       <div className="sizeImage-container">
         <img src="/Mountain.png" alt="Mountain" className="sizeImage" />
@@ -35,7 +35,11 @@ const About = () => {
                 <i className="fa-solid fa-chevron-up"></i>
               </span>
             </p>
-            {visibleIndex === index && <p className="description-text">{item.text}</p>}
+            {visibleIndex === index && (
+              <div className="description-text-container">
+                <p className="description-text">{item.text}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>

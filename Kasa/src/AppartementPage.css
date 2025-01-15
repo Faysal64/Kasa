@@ -4,9 +4,9 @@
 
 .backRed {
     background-color: #FF6060;
-    padding: 3px 0;
+    padding: 5px 0;
     border-radius: 10px;
-    width: 115px;
+    width: 70%;
     color: white;
     text-align: center;
 }
@@ -18,13 +18,10 @@
     margin-top: -10px;
 }
 
-
 .flexRow2 {
     display: flex;
     flex-direction: row;
 }
-
-
 
 .container1 {
     display: flex;
@@ -40,16 +37,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Centrer le texte */
+    text-align: center;
 }
 
-
-.description-container {
-    margin-top: 30px;
+.apartment-description-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
     width: 100%;
-    text-align: left; /* Aligne le texte à gauche */
+    text-align: left;
 }
-
 
 .location {
     text-align: left;
@@ -57,24 +55,24 @@
 }
 
 .image-container {
+    width: 100%; 
+    height: 415px; /* Définit la hauteur spécifique */
+    overflow: hidden; /* Empêche l'image de dépasser */
+  }
+  
+  .background-image {
     width: 100%;
-    max-width: 1200px; /* Limite la taille maximale de l'image */
-    margin: auto; /* Centre le conteneur horizontalement */
-    overflow: hidden; /* Cache tout débordement éventuel */
-}
-
-.background-image {
-    width: 100%; /* L'image prendra toute la largeur du conteneur */
-    height: auto; /* La hauteur sera ajustée automatiquement pour conserver le ratio */
-    max-width: 100%; /* Empêche l'image de dépasser la taille de son conteneur */
-    display: block; /* Évite les espaces blancs indésirables autour de l'image */
-}
+    height: 100%;
+    object-fit: cover; /* Assure que l'image remplisse l'espace sans déformation */
+    border-radius: 20px;
+  }
+  
 
 .author-name {
-    text-align: center; /* Centre les textes Alexandre et Dumas */
-    margin-bottom: 10px; /* Ajoute un espace entre les noms et la boule */
-    font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
-    line-height: 1.2; /* Réduit l'espace entre Alexandre et Dumas */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.2;
     margin-left: 10px;
     color: #FF6060;
     margin-right: 10px;
@@ -86,14 +84,12 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    margin: 10px auto; /* Centre la boule sous le texte */
+    margin: 10px auto;
 }
 
-
-.starsWidht{
+.starsWidht {
     font-size: 20px;
     height: 36px;
-    
 }
 
 .sizeStars {
@@ -104,54 +100,76 @@
     gap: 10px;
 }
 
-.displayRow2{
+.displayRow2 {
     display: flex;
     justify-content: end;
 }
 
-.margeDumas{
+.margeDumas {
     margin-top: -10px;
     margin-left: 20px;
 }
 
-.backRed2 {
+
+.apartment-description-visible {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 0; 
+    margin-bottom: 0; 
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
+}
+
+
+.apartment-description-item.open .apartment-description-visible {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    width: 100%;
+}
+
+
+.apartment-backRed2 {
     background-color: #FF6060;
-    padding: 10px 10px;
-    width: 100%; /* Ajustement pour afficher côte à côte */
+    padding: 10px;
+    width: 100%;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin: 0;
+    transition: background-color 0.3s ease;
 }
 
-.description-container {
-    display: flex;
-    justify-content: space-between; /* Les descriptions sont côte à côte */
-    gap: 20px; /* Espacement entre les deux descriptions */
-    margin-top: 20px;
-}
 
-.icon {
+.apartment-icon {
     font-weight: bold;
     transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
 
-.icon.rotate {
+.apartment-icon.rotate {
     transform: rotate(180deg);
 }
 
-.description-item {
-    width: 45%; /* Assure que les deux éléments ont une largeur égale */
-    transition: all 0.3s ease; /* Animation pour fluidifier le changement de taille */
+/* Description */
+.apartment-description-item {
+    width: 45%;
+    transition: all 0.3s ease;
+    margin-top: -10px; 
 }
 
-.description-item p {
+.apartment-description-item p {
     margin-top: 10px;
 }
 
-.description-container p:last-child {
-    margin-top: 10px;
+.apartment-description-container p:last-child {
+    margin: 0;
+    width: 100%;
 }
