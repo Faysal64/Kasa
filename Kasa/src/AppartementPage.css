@@ -1,15 +1,18 @@
 .colorRed {
     color: #FF6060;
+    display: flex
+
 }
 
 .backRed {
     background-color: #FF6060;
-    padding: 5px 0;
+    padding: 5px 10px; /* Ajuste le padding interne */
     border-radius: 10px;
-    width: 70%;
     color: white;
     text-align: center;
+    flex-grow: 1; /* Permet à chaque élément de prendre la même largeur */
 }
+
 
 .flexRow {
     display: flex;
@@ -173,3 +176,14 @@
     margin: 0;
     width: 100%;
 }
+
+
+.carousel {
+    width: 100%;                /* Prend toute la largeur du carrousel */
+    height: 415px;              /* Fixe la hauteur à 415px */
+    border-radius: 20px;        /* Bord arrondi pour le carrousel */
+    overflow: hidden; 
+    object-fit: contain;          /* Cache les parties qui dépassent */
+  }
+  
+  

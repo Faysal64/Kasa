@@ -5,7 +5,9 @@ import Header from './Header';
 import Footer from './Footer';
 import '../App.css';
 import '../AppartementPage.css';
-import Maison from '../../maison.json'; // Assurez-vous que les données sont disponibles
+import Maison from '../../maison.json';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles pour le carrousel
+import { Carousel } from 'react-responsive-carousel';
 
 function AppartementPage() {
   const { id } = useParams();
@@ -24,9 +26,14 @@ function AppartementPage() {
       <Header />
 
       <div className="main-container">
-        <div className="image-container">
-          <img src={apartment.cover} alt={apartment.title} className="background-image" />
-        </div>
+        {/* Carrousel des images */}
+        <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3000} className='carousel'>
+          {apartment.pictures.map((picture, index) => (
+            <div key={index}>
+              <img src={picture} alt={`Image ${index + 1}`} />
+            </div>
+          ))}
+        </Carousel>
 
         <div className="container1">
           <div>
@@ -48,7 +55,6 @@ function AppartementPage() {
               <div className="iconeBoule"></div>
             </div>
             <div className="sizeStars">
-              {/* Rendu des étoiles basé sur le rating */}
               {[...Array(5)].map((_, i) => (
                 <i
                   key={i}
@@ -71,9 +77,7 @@ function AppartementPage() {
               </span>
             </p>
             <div className="apartment-description-visible">
-              {isDescription1Visible && (
-                <p>{apartment.description}</p>
-              )}
+              {isDescription1Visible && <p>{apartment.description}</p>}
             </div>
           </div>
 
