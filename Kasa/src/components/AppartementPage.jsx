@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import '../App.css';
@@ -13,6 +12,7 @@ function AppartementPage() {
   const { id } = useParams();
   const [isDescription1Visible, setDescription1Visible] = useState(false);
   const [isDescription2Visible, setDescription2Visible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0); // Suivi de l'index actuel pour le compteur
 
   // Trouver les données de l'appartement correspondant
   const apartment = Maison.find((item) => item.id === id);
@@ -21,19 +21,52 @@ function AppartementPage() {
     return <Navigate to="/404" />;
   }
 
+  const handlePrev = () => {
+    setCurrentIndex((currentIndex - 1 + apartment.pictures.length) % apartment.pictures.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((currentIndex + 1) % apartment.pictures.length);
+  };
+
   return (
     <div>
       <Header />
 
       <div className="main-container">
         {/* Carrousel des images */}
-        <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3000} className='carousel'>
-          {apartment.pictures.map((picture, index) => (
-            <div key={index}>
-              <img src={picture} alt={`Image ${index + 1}`} />
-            </div>
-          ))}
-        </Carousel>
+        <div className="carousel-container">
+          <Carousel
+            showThumbs={false}           // Désactive les vignettes
+            infiniteLoop={true}          // Permet de faire défiler les images en boucle
+            autoPlay={false}             // Désactive la lecture automatique
+            interval={3000}              // Intervalle de 3 secondes
+            showStatus={false}           // Désactive "1 of 5"
+            showIndicators={false}       // Désactive les points
+            selectedItem={currentIndex}  // Contrôle l'index du carrousel
+            onChange={(index) => setCurrentIndex(index)} // Mets à jour l'index actuel
+            showArrows={false}           // Désactive les flèches par défaut
+          >
+            {apartment.pictures.map((picture, index) => (
+              <div key={index}>
+                <img src={picture} alt={`Image ${index + 1}`} />
+              </div>
+            ))}
+          </Carousel>
+
+          {/* Flèches personnalisées */}
+          <div className="carousel-arrow-left" onClick={handlePrev}>
+            <span className="material-icons carousel-arrow-left">chevron_left</span> {/* Flèche gauche Material */}
+          </div>
+          <div className="carousel-arrow-right" onClick={handleNext}>
+            <span className="material-icons carousel-arrow-right">chevron_right</span> {/* Flèche droite Material */}
+          </div>
+
+          {/* Indicateur personnalisé pour afficher "1/5" */}
+          <div className="carousel-indicator">
+            <span>{`${currentIndex + 1}/${apartment.pictures.length}`}</span>
+          </div>
+        </div>
 
         <div className="container1">
           <div>

@@ -186,4 +186,60 @@
     object-fit: contain;          /* Cache les parties qui dépassent */
   }
   
+  /* Carrousel container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limiter la largeur du carrousel */
+    margin: auto;
+  }
   
+  /* Images du carrousel */
+  .carousel .carousel-slider img {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  /* Flèches personnalisées */
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 130px; /* Taille des flèches */
+  font-weight: 300;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10; /* S'assurer que les flèches sont au-dessus du carrousel */
+  outline: none; /* Supprime le contour bleu du focus */
+}
+
+/* Désactive le contour sur le focus pour les icônes de Material */
+.material-icons:focus {
+  outline: none; /* Assure qu'il n'y a pas de contour sur le focus */
+}
+
+.carousel-arrow-left {
+  left: -15px; /* Position de la flèche gauche */
+}
+
+.carousel-arrow-right {
+  right: -15px; /* Position de la flèche droite */
+}
+
+/* Indicateur personnalisé */
+.carousel-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  z-index: 10;
+}
