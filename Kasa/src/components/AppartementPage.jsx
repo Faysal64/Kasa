@@ -5,16 +5,16 @@ import Footer from './Footer';
 import '../App.css';
 import '../AppartementPage.css';
 import Maison from '../../maison.json';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles pour le carrousel
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 
 function AppartementPage() {
   const { id } = useParams();
   const [isDescription1Visible, setDescription1Visible] = useState(false);
   const [isDescription2Visible, setDescription2Visible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0); // Suivi de l'index actuel pour le compteur
+  const [currentIndex, setCurrentIndex] = useState(0); 
 
-  // Trouver les données de l'appartement correspondant
+
   const apartment = Maison.find((item) => item.id === id);
 
   if (!apartment) {
@@ -34,40 +34,44 @@ function AppartementPage() {
       <Header />
 
       <div className="main-container">
-        {/* Carrousel des images */}
+        {/* Carrousel */}
         <div className="carousel-container">
           <Carousel
-            showThumbs={false}           // Désactive les vignettes
-            infiniteLoop={true}          // Permet de faire défiler les images en boucle
-            autoPlay={false}             // Désactive la lecture automatique
-            interval={3000}              // Intervalle de 3 secondes
-            showStatus={false}           // Désactive "1 of 5"
-            showIndicators={false}       // Désactive les points
-            selectedItem={currentIndex}  // Contrôle l'index du carrousel
-            onChange={(index) => setCurrentIndex(index)} // Mets à jour l'index actuel
-            showArrows={false}           // Désactive les flèches par défaut
-          >
-            {apartment.pictures.map((picture, index) => (
-              <div key={index}>
-                <img src={picture} alt={`Image ${index + 1}`} />
-              </div>
-            ))}
-          </Carousel>
+  showThumbs={false}           
+  infiniteLoop={true}          
+  autoPlay={false}             
+  interval={3000}              
+  showStatus={false}           
+  showIndicators={false}       
+  selectedItem={currentIndex}  
+  onChange={(index) => setCurrentIndex(index)} 
+  showArrows={false}           
+>
+  {apartment.pictures.map((picture, index) => (
+    <div key={index}>
+      <div className="image-container">
+        <img src={picture} alt={`Image ${index + 1}`} />
+      </div>
+    </div>
+  ))}
+</Carousel>
 
-          {/* Flèches personnalisées */}
+
+          {/* Flèches */}
           <div className="carousel-arrow-left" onClick={handlePrev}>
-            <span className="material-icons carousel-arrow-left">chevron_left</span> {/* Flèche gauche Material */}
+            <span className="material-icons carousel-arrow-left">chevron_left</span>
           </div>
           <div className="carousel-arrow-right" onClick={handleNext}>
-            <span className="material-icons carousel-arrow-right">chevron_right</span> {/* Flèche droite Material */}
+            <span className="material-icons carousel-arrow-right">chevron_right</span>
           </div>
 
-          {/* Indicateur personnalisé pour afficher "1/5" */}
+          {/* Indicateur */}
           <div className="carousel-indicator">
             <span>{`${currentIndex + 1}/${apartment.pictures.length}`}</span>
           </div>
         </div>
 
+        {/* Informations appartement */}
         <div className="container1">
           <div>
             <h1 className="colorRed">{apartment.title}</h1>
@@ -98,6 +102,7 @@ function AppartementPage() {
           </div>
         </div>
 
+        {/* Description et équipements */}
         <div className="apartment-description-container">
           <div className={`apartment-description-item ${isDescription1Visible ? 'open' : ''}`}>
             <p
