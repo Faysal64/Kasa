@@ -56,10 +56,19 @@
 }
 
 .image-container {
-    width: 100%;
-    height: 415px; 
-    
+    width: 100%; 
+    height: 400px; /* Ajuste la hauteur ici */
+    position: relative;
+    overflow: hidden; /* S'assure qu'aucun débordement ne se produit */
 }
+
+.image-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Garde l'image proportionnée sans la déformer */
+    border-radius: 20px; /* Garde les coins arrondis */
+}
+
 
 .background-image {
     width: 100%;
@@ -79,13 +88,15 @@
     font-weight: 500;
 }
 
-.iconeBoule {
-    background-color: #C4C4C4;
+
+
+.host-picture {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    margin: 10px auto;
-}
+    object-fit: cover;
+  }
+  
 
 .starsWidht {
     font-size: 20px;
@@ -238,7 +249,7 @@
 /* Indicateur */
 .carousel-indicator {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     color: white;

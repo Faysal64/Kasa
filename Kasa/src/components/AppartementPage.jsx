@@ -5,15 +5,14 @@ import Footer from './Footer';
 import '../App.css';
 import '../AppartementPage.css';
 import Maison from '../../maison.json';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 function AppartementPage() {
   const { id } = useParams();
   const [isDescription1Visible, setDescription1Visible] = useState(false);
   const [isDescription2Visible, setDescription2Visible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0); 
-
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const apartment = Maison.find((item) => item.id === id);
 
@@ -37,25 +36,24 @@ function AppartementPage() {
         {/* Carrousel */}
         <div className="carousel-container">
           <Carousel
-  showThumbs={false}           
-  infiniteLoop={true}          
-  autoPlay={false}             
-  interval={3000}              
-  showStatus={false}           
-  showIndicators={false}       
-  selectedItem={currentIndex}  
-  onChange={(index) => setCurrentIndex(index)} 
-  showArrows={false}           
->
-  {apartment.pictures.map((picture, index) => (
-    <div key={index}>
-      <div className="image-container">
-        <img src={picture} alt={`Image ${index + 1}`} />
-      </div>
-    </div>
-  ))}
-</Carousel>
-
+            showThumbs={false}
+            infiniteLoop={true}
+            autoPlay={false}
+            interval={3000}
+            showStatus={false}
+            showIndicators={false}
+            selectedItem={currentIndex}
+            onChange={(index) => setCurrentIndex(index)}
+            showArrows={false}
+          >
+            {apartment.pictures.map((picture, index) => (
+              <div key={index}>
+                <div className="image-container">
+                  <img src={picture} alt={`Image ${index + 1}`} />
+                </div>
+              </div>
+            ))}
+          </Carousel>
 
           {/* Flèches */}
           <div className="carousel-arrow-left" onClick={handlePrev}>
@@ -89,7 +87,13 @@ function AppartementPage() {
                 <p>{apartment.host.name.split(' ')[0]}</p>
                 <p className="margeDumas">{apartment.host.name.split(' ')[1]}</p>
               </div>
-              <div className="iconeBoule"></div>
+              <div className="iconeBoule">
+                <img
+                  src={apartment.host.picture}
+                  alt={`Photo de ${apartment.host.name}`}
+                  className="host-picture"
+                />
+              </div>
             </div>
             <div className="sizeStars">
               {[...Array(5)].map((_, i) => (
