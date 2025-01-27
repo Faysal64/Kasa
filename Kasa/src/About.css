@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 50px;
     flex-grow: 1; 
     gap: 15px;
   }
@@ -40,7 +40,7 @@
     background-color: #FF6060;
     color: white;
     padding: 10px;
-    border-radius: 5px 5px 0 0; /* Coins arrondis en haut seulement */
+    border-radius: 5px; /* Coins arrondis en haut seulement */
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -60,6 +60,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin: 0; /* Supprime les marges internes */
+    text-align: left;
   }
   
   .icon {
@@ -71,3 +72,25 @@
     transform: rotate(180deg);
   }
   
+
+  /* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .sizeImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 87%;
+    height: 111px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.description-item1 {
+  width: 87%;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+}

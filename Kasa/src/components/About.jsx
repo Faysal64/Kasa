@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import '../About.css';
+import React, { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import "../About.css";
 
 const About = () => {
-  const [visibleIndex, setVisibleIndex] = useState(null);
+  const [visibleStates, setVisibleStates] = useState({}); // État pour chaque cadre
 
   const toggleDescription = (index) => {
-    setVisibleIndex(visibleIndex === index ? null : index);
+    setVisibleStates((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index], // Inverse l'état uniquement pour cet index
+    }));
   };
 
   const descriptions = [
@@ -18,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <div className="about-page"> 
+    <div className="about-page">
       <Header />
       <div className="sizeImage-container">
         <img src="/Mountain.png" alt="Mountain" className="sizeImage" />
@@ -31,11 +34,11 @@ const About = () => {
               onClick={() => toggleDescription(index)}
             >
               {item.title}
-              <span className={`icon ${visibleIndex === index ? 'rotate' : ''}`}>
+              <span className={`icon ${visibleStates[index] ? "rotate" : ""}`}>
                 <i className="fa-solid fa-chevron-up"></i>
               </span>
             </p>
-            {visibleIndex === index && (
+            {visibleStates[index] && (
               <div className="description-text-container">
                 <p className="description-text">{item.text}</p>
               </div>

@@ -1,6 +1,10 @@
 .colorRed {
     color: #FF6060;
     display: flex;
+    text-align: left;
+    margin-top: -1px;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .backRed {
@@ -10,6 +14,7 @@
     color: white;
     text-align: center;
     flex-grow: 1; 
+    font-size: 14px;
 }
 
 .flexRow {
@@ -17,6 +22,7 @@
     flex-direction: row;
     gap: 10px;
     margin-top: -10px;
+    width: 70%;
 }
 
 .flexRow2 {
@@ -105,7 +111,7 @@
 
 .sizeStars {
     color: #FF6060;
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     justify-content: end;
     gap: 10px;
@@ -114,6 +120,7 @@
 .displayRow2 {
     display: flex;
     justify-content: end;
+    margin-top: -15px;
 }
 
 .margeDumas {
@@ -138,7 +145,6 @@
     opacity: 1;
     visibility: visible;
     height: auto;
-    width: 100%;
 }
 
 .apartment-backRed2 {

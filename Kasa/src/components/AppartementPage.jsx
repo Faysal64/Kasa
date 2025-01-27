@@ -72,7 +72,7 @@ function AppartementPage() {
         {/* Informations appartement */}
         <div className="container1">
           <div>
-            <h1 className="colorRed">{apartment.title}</h1>
+            <h2 className="colorRed">{apartment.title}</h2>
             <h3 className="location">{apartment.location}</h3>
             <div className="flexRow">
               {apartment.tags.map((tag, index) => (
