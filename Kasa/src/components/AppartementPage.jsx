@@ -81,7 +81,7 @@ function AppartementPage() {
             </div>
           </div>
 
-          <div>
+          <div className='flexRow1'>
             <div className="displayRow2">
               <div className="author-name">
                 <p>{apartment.host.name.split(' ')[0]}</p>

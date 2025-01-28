@@ -264,3 +264,60 @@
     border-radius: 10px;
     z-index: 10;
 }
+
+
+@media screen and (max-width: 768px) {
+    .container1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .flexRow1{
+    display: flex;
+    flex-direction: row-reverse;
+   
+    }
+
+    .apartment-description-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .apartment-description-item {
+        width: 100%;
+        transition: all 0.3s ease;
+        margin-top: -10px;
+    }
+
+    .starsWidht {
+        font-size: 14px;
+        height: 36px;
+    }
+
+    .host-picture {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 5px;
+    }
+
+    .author-name {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 1.2;
+        margin-left: 10px;
+        color: #FF6060;
+        margin-right: 10px;
+        font-weight: 500;
+    }
+  }

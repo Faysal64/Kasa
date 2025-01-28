@@ -26,4 +26,18 @@
     text-decoration: underline;
     cursor: pointer; 
   }
+
+  @media screen and (max-width: 768px) {
+    .erreur {
+      font-size: 120px; /* Taille réduite pour les écrans moyens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .erreur {
+      font-size: 80px; /* Encore plus petit pour les très petits écrans */
+    }
+
+    
+  }
   
