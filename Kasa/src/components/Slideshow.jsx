@@ -3,7 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import '../App.css';
-import '../AppartementPage.css';
+import '../Slideshow.css';
 import Maison from '../../maison.json';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import About from './components/About.jsx';
-import AppartementPage from './components/AppartementPage.jsx';
+import Slideshow from './components/Slideshow.jsx';
 import NotFound from './components/NotFound.jsx';
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/Appartement/:id',
-    element: <AppartementPage />,
+    element: <Slideshow />,
   },
   {
     path: '/about',
