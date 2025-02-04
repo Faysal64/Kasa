@@ -4,12 +4,12 @@ import Footer from "./Footer";
 import "../About.css";
 
 const About = () => {
-  const [visibleStates, setVisibleStates] = useState({}); // État pour chaque cadre
+  const [visibleStates, setVisibleStates] = useState({});
 
   const toggleDescription = (index) => {
     setVisibleStates((prevState) => ({
       ...prevState,
-      [index]: !prevState[index], // Inverse l'état uniquement pour cet index
+      [index]: !prevState[index], 
     }));
   };
 
