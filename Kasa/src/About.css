@@ -32,7 +32,7 @@
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    margin-bottom: 10px; /* Ajoute une marge entre les items */
+    margin-bottom: 10px; 
     
   }
   
@@ -40,7 +40,7 @@
     background-color: #FF6060;
     color: white;
     padding: 10px;
-    border-radius: 5px; /* Coins arrondis en haut seulement */
+    border-radius: 5px; 
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -48,10 +48,10 @@
   }
   
   .description-text-container {
-    background-color: #f5f5f5; /* Fond gris */
+    background-color: #f5f5f5; 
     padding: 10px;
-    border-radius: 0 0 5px 5px; /* Coins arrondis en bas seulement */
-    border-top: 1px solid #ccc; /* Petite bordure pour séparation */
+    border-radius: 0 0 5px 5px; 
+    border-top: 1px solid #ccc; 
     display: flex;
   }
   
@@ -59,7 +59,7 @@
     color: #333;
     font-size: 14px;
     line-height: 1.5;
-    margin: 0; /* Supprime les marges internes */
+    margin: 0; 
     text-align: left;
   }
   
