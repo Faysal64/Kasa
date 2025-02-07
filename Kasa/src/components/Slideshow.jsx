@@ -28,6 +28,8 @@ function AppartementPage() {
     setCurrentIndex((currentIndex + 1) % apartment.pictures.length);
   };
 
+  const arrowsTrue = apartment.pictures.length > 1;
+
   return (
     <div>
       <Header />
@@ -44,7 +46,7 @@ function AppartementPage() {
             showIndicators={false}
             selectedItem={currentIndex}
             onChange={(index) => setCurrentIndex(index)}
-            showArrows={false}
+            showArrows={false} // Hiding arrows by default, will conditionally render them later
           >
             {apartment.pictures.map((picture, index) => (
               <div key={index}>
@@ -56,17 +58,21 @@ function AppartementPage() {
           </Carousel>
 
           {/* Flèches */}
-          <div className="carousel-arrow-left" onClick={handlePrev}>
-            <span className="material-icons carousel-arrow-left">chevron_left</span>
-          </div>
-          <div className="carousel-arrow-right" onClick={handleNext}>
-            <span className="material-icons carousel-arrow-right">chevron_right</span>
-          </div>
+          {arrowsTrue && (
+            <>
+              <div className="carousel-arrow-left" onClick={handlePrev}>
+                <span className="material-icons carousel-arrow-left">chevron_left</span>
+              </div>
+              <div className="carousel-arrow-right" onClick={handleNext}>
+                <span className="material-icons carousel-arrow-right">chevron_right</span>
+              </div>
 
-          {/* Indicateur */}
-          <div className="carousel-indicator">
-            <span>{`${currentIndex + 1}/${apartment.pictures.length}`}</span>
-          </div>
+              {/* Indicateur */}
+              <div className="carousel-indicator">
+                <span>{`${currentIndex + 1}/${apartment.pictures.length}`}</span>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Informations appartement */}
@@ -99,7 +105,7 @@ function AppartementPage() {
               {[...Array(5)].map((_, i) => (
                 <i
                   key={i}
-                  className={`fa-star starsWidht ${i < apartment.rating ? 'fa-solid' : 'fa-regular'}`}
+                  className={`fa-star starsWidht ${i < apartment.rating ? 'fa-solid' : 'fa-regular'}` }
                 ></i>
               ))}
             </div>
