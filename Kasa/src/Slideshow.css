@@ -148,8 +148,14 @@
     opacity: 1;
     visibility: visible;
     height: auto;
+    margin-bottom: 15px;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
 .apartment-backRed2 {
     background-color: #FF6060;
     padding: 10px;
@@ -181,7 +187,7 @@
 }
 
 .apartment-description-item p {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .apartment-description-container p:last-child {
@@ -290,6 +296,7 @@
         justify-content: end;
         margin-top: -15px;
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .apartment-description-container {
@@ -314,7 +321,7 @@
 
     .sizeStars {
         color: #FF6060;
-        margin-top: 10px;
+        margin-top: 0px;
         display: flex;
         align-items: center;
         gap: 10px;
