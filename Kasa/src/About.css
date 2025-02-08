@@ -25,6 +25,7 @@
     margin-top: 50px;
     flex-grow: 1; 
     gap: 15px;
+    width:100%;
   }
   
   .description-item1 {
@@ -63,6 +64,7 @@
     text-align: left;
   }
   
+  
   .icon {
     margin-left: 10px;
     transition: transform 0.3s ease;
@@ -72,6 +74,15 @@
     transform: rotate(180deg);
   }
   
+
+  
+.collapse-about {
+  width: 100%;
+}
+
+.about-collapse {
+  width: 55%;
+}
 
   /* Media Queries */
 
@@ -86,6 +97,11 @@
     border-radius: 10px;
 }
 
+.about-collapse {
+  width: 86% !important; 
+}
+
+
 .description-item1 {
   width: 87%;
   border-radius: 5px;
@@ -93,4 +109,11 @@
   cursor: pointer;
   margin-bottom: 10px;
 }
+
+.about-description {
+  width: 100%;
+  margin: auto;
+  margin-top: 65px;
+}
+
 }
