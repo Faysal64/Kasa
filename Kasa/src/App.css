@@ -163,6 +163,11 @@ body{
     height: 200px; 
   }
 
+  .nav-links a {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
   .grid {
     width: 79%; 
   }
