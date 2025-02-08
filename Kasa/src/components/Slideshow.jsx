@@ -7,11 +7,10 @@ import '../Slideshow.css';
 import Maison from '../../maison.json';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import Collapse from './Collapse';  // Import du composant Collapse
 
 function AppartementPage() {
   const { id } = useParams();
-  const [isDescription1Visible, setDescription1Visible] = useState(false);
-  const [isDescription2Visible, setDescription2Visible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const apartment = Maison.find((item) => item.id === id);
@@ -46,7 +45,7 @@ function AppartementPage() {
             showIndicators={false}
             selectedItem={currentIndex}
             onChange={(index) => setCurrentIndex(index)}
-            showArrows={false} // Hiding arrows by default, will conditionally render them later
+            showArrows={false}
           >
             {apartment.pictures.map((picture, index) => (
               <div key={index}>
@@ -105,50 +104,25 @@ function AppartementPage() {
               {[...Array(5)].map((_, i) => (
                 <i
                   key={i}
-                  className={`fa-star starsWidht ${i < apartment.rating ? 'fa-solid' : 'fa-regular'}` }
+                  className={`fa-star starsWidht ${i < apartment.rating ? 'fa-solid' : 'fa-regular'}`}
                 ></i>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Description et équipements */}
-        <div className="apartment-description-container">
-          <div className={`apartment-description-item ${isDescription1Visible ? 'open' : ''}`}>
-            <p
-              className="apartment-backRed2"
-              onClick={() => setDescription1Visible(!isDescription1Visible)}
-            >
-              Description
-              <span className={`apartment-icon ${isDescription1Visible ? 'rotate' : ''}`}>
-                <i className="fa-solid fa-chevron-up"></i>
-              </span>
-            </p>
-            <div className="apartment-description-visible">
-              {isDescription1Visible && <p>{apartment.description}</p>}
-            </div>
-          </div>
+        <div className="apartment-description-container slideshow-description">
+          <Collapse title="Description" className="slideshow-collapse">
+            <p>{apartment.description}</p>
+          </Collapse>
 
-          <div className={`apartment-description-item ${isDescription2Visible ? 'open' : ''}`}>
-            <p
-              className="apartment-backRed2"
-              onClick={() => setDescription2Visible(!isDescription2Visible)}
-            >
-              Équipements
-              <span className={`apartment-icon ${isDescription2Visible ? 'rotate' : ''}`}>
-                <i className="fa-solid fa-chevron-up"></i>
-              </span>
-            </p>
-            <div className="apartment-description-visible">
-              {isDescription2Visible && (
-                <ul>
-                  {apartment.equipments.map((equipment, index) => (
-                    <li key={index}>{equipment}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </div>
+          <Collapse title="Équipements" className="slideshow-collapse">
+            <ul>
+              {apartment.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </Collapse>
         </div>
       </div>
 
