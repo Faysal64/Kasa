@@ -234,19 +234,22 @@ ul {
 
 
 /* Flèches */
-.carousel-arrow-left,
-.carousel-arrow-right {
+.carousel-arrow-left, .carousel-arrow-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    font-size: 130px;
-    font-weight: 300;
+    font-size: 50px; /* Ajuste la taille ici */
+    font-weight: bold;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-    outline: none;
+    border: none;
+}
+
+.material-icons{
+font-size: 120px;
 }
 
 .material-icons:focus {
@@ -254,11 +257,11 @@ ul {
 }
 
 .carousel-arrow-left {
-    left: -15px;
+    left: -15px; /* Correction de l'espacement */
 }
 
 .carousel-arrow-right {
-    right: -15px;
+    right: -15px; /* Correction de l'espacement */
 }
 
 /* Indicateur */
