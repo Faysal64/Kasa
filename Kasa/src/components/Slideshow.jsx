@@ -5,9 +5,7 @@ import Footer from './Footer';
 import '../App.css';
 import '../Slideshow.css';
 import Maison from '../../maison.json';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import Collapse from './Collapse';  // Import du composant Collapse
+import Collapse from './Collapse';
 
 function AppartementPage() {
   const { id } = useParams();
@@ -20,11 +18,11 @@ function AppartementPage() {
   }
 
   const handlePrev = () => {
-    setCurrentIndex((currentIndex - 1 + apartment.pictures.length) % apartment.pictures.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + apartment.pictures.length) % apartment.pictures.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((currentIndex + 1) % apartment.pictures.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % apartment.pictures.length);
   };
 
   const arrowsTrue = apartment.pictures.length > 1;
@@ -36,34 +34,18 @@ function AppartementPage() {
       <div className="main-container">
         {/* Carrousel */}
         <div className="carousel-container">
-          <Carousel
-            showThumbs={false}
-            infiniteLoop={true}
-            autoPlay={false}
-            interval={3000}
-            showStatus={false}
-            showIndicators={false}
-            selectedItem={currentIndex}
-            onChange={(index) => setCurrentIndex(index)}
-            showArrows={false}
-          >
-            {apartment.pictures.map((picture, index) => (
-              <div key={index}>
-                <div className="image-container">
-                  <img src={picture} alt={`Image ${index + 1}`} />
-                </div>
-              </div>
-            ))}
-          </Carousel>
+          <div className="image-container">
+            <img src={apartment.pictures[currentIndex]} alt={`Image ${currentIndex + 1}`} />
+          </div>
 
           {/* Flèches */}
           {arrowsTrue && (
             <>
               <div className="carousel-arrow-left" onClick={handlePrev}>
-                <span className="material-icons carousel-arrow-left">chevron_left</span>
+                <span className="material-icons">chevron_left</span>
               </div>
               <div className="carousel-arrow-right" onClick={handleNext}>
-                <span className="material-icons carousel-arrow-right">chevron_right</span>
+                <span className="material-icons">chevron_right</span>
               </div>
 
               {/* Indicateur */}
